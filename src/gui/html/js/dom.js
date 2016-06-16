@@ -77,11 +77,6 @@
       document.getElementById(dialogElementId).open();
     }
 
-    static initialiseVirtualLists(plugins) {
-      document.getElementById('cardsNav').items = plugins;
-      document.getElementById('pluginCardList').items = plugins;
-    }
-
     static updateSelectedGame(gameFolder) {
       document.getElementById('gameMenu').value = gameFolder;
 
@@ -185,6 +180,14 @@
       document.getElementById('LOOTVersion').textContent = version.release;
       document.getElementById('firstTimeLootVersion').textContent = version.release;
       document.getElementById('LOOTBuild').textContent = version.build;
+    }
+
+    static initialiseAutocompleteFilenames(filenames) {
+      getElementInTableRowTemplate('fileRow', 'name').setAttribute('source', JSON.stringify(filenames));
+    }
+
+    static initialiseAutocompleteBashTags(tags) {
+      getElementInTableRowTemplate('tagRow', 'name').setAttribute('source', JSON.stringify(tags));
     }
   };
 }));

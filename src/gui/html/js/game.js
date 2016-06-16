@@ -15,6 +15,7 @@
     this.globalMessages = obj.globalMessages || [];
     this.masterlist = obj.masterlist || {};
     this.plugins = obj.plugins || [];
+    this.bashTags = obj.bashTags || [];
 
     this.loadOrder = undefined;
     this.oldLoadOrder = undefined;
@@ -288,6 +289,15 @@
 
   getPluginNames() {
     return this.plugins.map(plugin => plugin.name);
+  }
+
+  initialiseUI(DOM, Filters) {
+    /* Re-initialise autocomplete suggestions. */
+    DOM.initialiseAutocompleteFilenames(this.getPluginNames());
+    DOM.initialiseAutocompleteBashTags(this.bashTags);
+
+    /* Re-initialise conflicts filter plugin list. */
+    Filters.fillConflictsFilterList(this.plugins);
   }
 
   static onPluginsChange(evt) {

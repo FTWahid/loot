@@ -2,6 +2,7 @@
 
 <link rel="import" href="../../../../bower_components/iron-icons/iron-icons.html">
 
+<link rel="import" href="../../../../bower_components/paper-autocomplete/paper-autocomplete.html">
 <link rel="import" href="../../../../bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="../../../../bower_components/paper-input/paper-input.html">
 <link rel="import" href="../../../../bower_components/paper-input/paper-textarea.html">
@@ -12,7 +13,7 @@
 
 <template id="fileRow">
   <tr>
-    <td><paper-input error-message="A filename is required." class="name" required auto-validate no-label-float></paper-input></td>
+    <td><paper-autocomplete error-message="A filename is required." class="name" required auto-validate no-label-float></paper-autocomplete></td>
     <td><paper-input class="display" no-label-float></paper-input></td>
     <td><paper-input class="condition" no-label-float></paper-input></td>
     <td>
@@ -55,7 +56,7 @@
         <paper-item value="remove">Remove</paper-item>
       </loot-dropdown-menu>
     </td>
-    <td><paper-input error-message="A name is required." class="name" required auto-validate no-label-float></paper-input></td>
+    <td><paper-autocomplete error-message="A name is required." class="name" required auto-validate no-label-float></paper-autocomplete></td>
     <td><paper-input class="condition" no-label-float></paper-input></td>
     <td>
       <span>

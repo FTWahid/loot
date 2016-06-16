@@ -176,8 +176,7 @@
       const game = JSON.parse(result, Plugin.fromJson);
       appData.game = new Game(game, appData.l10n);
 
-      dom.initialiseVirtualLists(appData.game.plugins);
-      appData.Filters.fillConflictsFilterList(appData.game.plugins);
+      appData.game.initialiseUI(dom, appData.Filters);
       appData.filters.load(appData.settings.filters);
       appData.filters.apply(appData.game.plugins);
 
